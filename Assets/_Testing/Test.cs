@@ -15,14 +15,12 @@ public static class Getter
 
 public class Test : MonoBehaviour
 {
-    [Dropdown("GetStrings")]
-    public string Name;
-
     [MinMaxSlider(5.1f,9.1f)]
     public Vector2 minMaxVector;
 
-    private static string[] GetStrings()
+    [EasyButtons.Button]
+    private static void GetStrings()
     {
-        return new string[] { "A", "B", "C", "D", };
+        Debug.Log("A");
     }
 }

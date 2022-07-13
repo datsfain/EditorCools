@@ -10,6 +10,7 @@ public class MinMaxAttributeDrawer : PropertyDrawer
     {
         EditorGUI.BeginProperty(position, label, property);
 
+
         var vector2 = property.vector2Value;
 
         var attr = attribute as MinMaxSliderAttribute;
