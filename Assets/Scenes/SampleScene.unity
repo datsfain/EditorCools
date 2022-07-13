@@ -328,7 +328,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e74ca8cce2290914aadb72edc93d6684, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: '<error: method not found>'
+  Name: C
+  minMaxVector: {x: 6.1612244, y: 7.1538787}
 --- !u!4 &1468676886
 Transform:
   m_ObjectHideFlags: 0
