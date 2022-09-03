@@ -1,0 +1,1 @@
+This product includes code from https://github.com/madsbangh/EasyButtons developed by - Mads Bang Hoffensetz

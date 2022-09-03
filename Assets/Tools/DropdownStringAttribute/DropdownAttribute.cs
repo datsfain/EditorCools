@@ -14,12 +14,7 @@ public class DropdownAttribute : PropertyAttribute
         Location = MethodLocation.PropertyClass;
         MethodName = methodName;
     }
-    /// <summary>
-    /// Use This Constructor Declaration For Methods That Does Not Belong To
-    /// The Declaring Class Of Property That Attribute Is Put On
-    /// </summary>
-    /// <param name="methodOwner"></param>
-    /// <param name="methodName"></param>
+
     public DropdownAttribute(Type methodOwner, string methodName)
     {
         Location = MethodLocation.StaticClass;

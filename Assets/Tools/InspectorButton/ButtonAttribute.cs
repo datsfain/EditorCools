@@ -9,12 +9,9 @@
         public readonly string Row;
         public readonly float Space;
         public readonly bool HasRow;
-        public ButtonAttribute() { }
-        public ButtonAttribute(string name, float space = 0) : this(name, default, space) { }
-        public ButtonAttribute(string name, string rowName) : this(name, rowName, default) { }
-        public ButtonAttribute(string name, string rowName, float space)
+        public ButtonAttribute(string name = default, string row = default, float space = default)
         {
-            Row = rowName;
+            Row = row;
             HasRow = !string.IsNullOrEmpty(Row);
             Name = name;
             Space = space;
