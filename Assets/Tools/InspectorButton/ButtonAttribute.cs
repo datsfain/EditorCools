@@ -1,60 +1,24 @@
-﻿namespace EasyButtons
+﻿namespace EditorCools
 {
     using System;
-    using JetBrains.Annotations;
 
-    public enum ButtonMode
-    {
-        AlwaysEnabled,
-        EnabledInPlayMode,
-        DisabledInPlayMode
-    }
-
-    [Flags]
-    public enum ButtonSpacing
-    {
-        None = 0,
-        Before = 1,
-        After = 2
-    }
-
-    /// <summary>
-    /// Attribute to create a button in the inspector for calling the method it is attached to.
-    /// The method must have no arguments.
-    /// </summary>
-    /// <example><code>
-    /// [Button]
-    /// public void MyMethod()
-    /// {
-    ///     Debug.Log("Clicked!");
-    /// }
-    /// </code></example>
     [AttributeUsage(AttributeTargets.Method, Inherited = true, AllowMultiple = false)]
     public sealed class ButtonAttribute : Attribute
     {
-        /// <summary> Custom name of a button or <c>null</c> if not set. </summary>
         public readonly string Name;
-
+        public readonly string Row;
+        public readonly float Space;
+        public readonly bool HasRow;
         public ButtonAttribute() { }
-
-        public ButtonAttribute(string name) => Name = name;
-
-        /// <summary>
-        /// A mode that indicates when the button must be enabled.
-        /// Defaults to <see cref="ButtonMode.AlwaysEnabled"/>.
-        /// </summary>
-        public ButtonMode Mode { get; set; } = ButtonMode.AlwaysEnabled;
-
-        /// <summary>
-        /// Indicates whether a button should have spacing before, after, or no spacing at all.
-        /// Defaults to <see cref="ButtonSpacing.None"/>.
-        /// </summary>
-        public ButtonSpacing Spacing { get; set; } = ButtonSpacing.None;
-
-        /// <summary>
-        /// Whether to expand the parameters foldout by default. Has no effect on buttons with no parameters.
-        /// Defaults to <c>false</c>.
-        /// </summary>
-        public bool Expanded { get; set; }
+        public ButtonAttribute(string name, float space = 0) : this(name, default, space) { }
+        public ButtonAttribute(string name, string rowName) : this(name, rowName, default) { }
+        public ButtonAttribute(string name, string rowName, float space)
+        {
+            Row = rowName;
+            HasRow = !string.IsNullOrEmpty(Row);
+            Name = name;
+            Space = space;
+        }
     }
 }
+

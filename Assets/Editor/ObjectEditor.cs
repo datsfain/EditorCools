@@ -1,10 +1,9 @@
-﻿namespace EasyButtons.Editor
+﻿namespace EditorCools.Editor
 {
     using UnityEditor;
     using Object = UnityEngine.Object;
 
-    [CustomEditor(typeof(Object), true)]
-    [CanEditMultipleObjects]
+    [CustomEditor(typeof(Object), true), CanEditMultipleObjects]
     internal class ObjectEditor : Editor
     {
         private ButtonsDrawer _buttonsDrawer;
